@@ -1,15 +1,19 @@
 ><html>
 <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
   <title>Contacts</title>
 </head>
 <body>
-    <h1>You have created a contact.</h1>
+    <div class="container">
+        <h1>You have created a contact.</h1>
 
-    <h3>{{ new_contact.getFirstName }}</h3>
-    <p>First Name: {{ new_contact.getFirstName }} </p>
-    <p>Last Name: {{ new_contact.getLastName }} </p>
-    <p>Phone Number: {{ new_contact.getPhoneNumber }} </p>
-    <p>Address: {{ new_contact.getAddress }} </p>
-    <p><a href="/">View your list of contacts.</a></p>
+        <h3>{{ new_contact.getFirstName }}</h3>
+        <p>First Name: {{ new_contact.getFirstName }} </p>
+        <p>Last Name: {{ new_contact.getLastName }} </p>
+        <p>Phone Number: {{ new_contact.getPhoneNumber }} </p>
+        <p>Address: {{ new_contact.getAddress }} </p>
+        <p><a href="/" style="color: black; text-decoration: underline;">View your list of contacts.</a></p>
+  </div>
 </body>
 </html>

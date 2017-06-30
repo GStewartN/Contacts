@@ -1,40 +1,49 @@
 <html>
 <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
     <title>Contacts</title>
 </head>
 <body>
-      <h1>Contacts:</h1>
-          {% if contacts is not empty %}
-              <h3>Here are your contacts:</h3>
-                  <ul>
-                        {% for contact in contacts %}
-                            <h3> {{ contact.getFirstName }} </h3>
-                            <li>First Name: {{ contact.getFirstName }} </li>
-                            <li>Last Name: {{ contact.getLastName }} </li>
-                            <li>Phone: {{ contact.getPhoneNumber }} </li>
-                            <li>Address: {{ contact.getAddress }} </li></br>
-                        {% endfor %}
-                  </ul>
-          {% endif %}
+    <div class="container">
+      <div class="well">
+          <h1>Contacts:</h1>
+              {% if contacts is not empty %}
+                  <h3>Here are your contacts:</h3>
+                      <ul>
+                            {% for contact in contacts %}
+                                <h3> {{ contact.getFirstName }} </h3>
+                                <li>First Name: {{ contact.getFirstName }} </li>
+                                <li>Last Name: {{ contact.getLastName }} </li>
+                                <li>Phone: {{ contact.getPhoneNumber }} </li>
+                                <li>Address: {{ contact.getAddress }} </li></br>
+                            {% endfor %}
+                      </ul>
+              {% endif %}
+      </div>
 
-      <form action='/contacts' method='post'>
+        <h2>Enter contact details here:</h2>
+        <form action='/contacts' method='post'>
 
-          <label for='first_name'>Enter First Name:</label>
-          <input name='first_name' type='text'></br>
+            <label for='first_name'>First Name:</label>
+            <input name='first_name' type='text'></br>
 
-          <label for='last_name'>Enter Last Name:</label>
-          <input name='last_name' type='text'></br>
+            <label for='last_name'>Last Name:</label>
+            <input name='last_name' type='text'></br>
 
-          <label for='phone_number'>Enter Phone Number:</label>
-          <input name='phone_number' type='number'></br>
+            <label for='phone_number'>Phone #:</label>
+            <input name='phone_number' type='number'></br>
 
-          <label for='address'>Enter Address:</label>
-          <input name='address' type='text'>
-
-          <button type="submit">Add Contact</button>
-      </form>
-      <form action='/delete_contacts' method='post'>
-          <button type='submit'>Delete All Contacts</button>
-      </form>
+            <label for='address'>Address:</label>
+            <input name='address' type='text'>
+            </br>
+            <button type="submit">Add Contact</button>
+        </form>
+        <div class='well'>
+            <form action='/delete_contacts' method='post'>
+                <button type='submit'>Delete All Contacts</button>
+            </form>
+      </div>
+    </div>
 </body>
 </html>
