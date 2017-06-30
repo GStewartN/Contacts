@@ -1,14 +1,15 @@
 ><html>
 <head>
-  <title>Create Contact</title>
+  <title>Contacts</title>
 </head>
 <body>
     <h1>You have created a contact.</h1>
+
     <h3>{{ new_contact.getFirstName }}</h3>
-    <p>{{ new_contact.getFirstName }}</p>
-    <p>{{ new_contact.getLastName }}</p>
-    <p>{{ new_contact.getPhoneNumber }}</p>
-    <p>{{ new_contact.getAddress }}</p>
+    <p>First Name: {{ new_contact.getFirstName }} </p>
+    <p>Last Name: {{ new_contact.getLastName }} </p>
+    <p>Phone Number: {{ new_contact.getPhoneNumber }} </p>
+    <p>Address: {{ new_contact.getAddress }} </p>
     <p><a href="/">View your list of contacts.</a></p>
 </body>
 </html>

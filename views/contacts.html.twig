@@ -5,14 +5,14 @@
 <body>
       <h1>Contacts:</h1>
           {% if contacts is not empty %}
-              <h3>Here are your contacts.</h3>
+              <h3>Here are your contacts:</h3>
                   <ul>
                         {% for contact in contacts %}
-                            <h3> {{ place.getFirstName }} </h3>
-                            <li>First Name: {{ place.getFirstName }} </li>
-                            <li>Last Name: {{ place.getLastName }} </li>
-                            <li>Phone: {{ place.getPhoneNumber }} </li>
-                            <li>Address: {{ place.getAddress }} </li></br>
+                            <h3> {{ contact.getFirstName }} </h3>
+                            <li>First Name: {{ contact.getFirstName }} </li>
+                            <li>Last Name: {{ contact.getLastName }} </li>
+                            <li>Phone: {{ contact.getPhoneNumber }} </li>
+                            <li>Address: {{ contact.getAddress }} </li></br>
                         {% endfor %}
                   </ul>
           {% endif %}
@@ -32,6 +32,9 @@
           <input name='address' type='text'>
 
           <button type="submit">Add Contact</button>
+      </form>
+      <form action='/delete_contacts' method='post'>
+          <button type='submit'>Delete All Contacts</button>
       </form>
 </body>
 </html>
