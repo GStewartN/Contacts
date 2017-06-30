@@ -8,25 +8,27 @@
               <h3>Here are your contacts.</h3>
                   <ul>
                         {% for contact in contacts %}
+                            <h3> {{ place.getFirstName }} </h3>
                             <li>First Name: {{ place.getFirstName }} </li>
                             <li>Last Name: {{ place.getLastName }} </li>
                             <li>Phone: {{ place.getPhoneNumber }} </li>
-                            <li>Address: {{ place.getAddress }} </li>
+                            <li>Address: {{ place.getAddress }} </li></br>
                         {% endfor %}
                   </ul>
           {% endif %}
 
       <form action='/contacts' method='post'>
-          <label for='first_name'>Enter First Name</label>
-          <input name='first_name' type='text'>
 
-          <label for='last_name'>Enter Last Name</label>
-          <input name='last_name' type='text'>
+          <label for='first_name'>Enter First Name:</label>
+          <input name='first_name' type='text'></br>
 
-          <label for='phone_number'>Enter First Name</label>
-          <input name='phone_number' type='number'>
+          <label for='last_name'>Enter Last Name:</label>
+          <input name='last_name' type='text'></br>
 
-          <label for='address'>Enter First Name</label>
+          <label for='phone_number'>Enter Phone Number:</label>
+          <input name='phone_number' type='number'></br>
+
+          <label for='address'>Enter Address:</label>
           <input name='address' type='text'>
 
           <button type="submit">Add Contact</button>
