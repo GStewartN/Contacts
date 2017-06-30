@@ -6,11 +6,11 @@
 </head>
 <body>
     <div class="container">
-      <div class="well">
-          <h1>Contacts:</h1>
-              {% if contacts is not empty %}
-                  <h3>Here are your contacts:</h3>
-                      <ul>
+        <div class="well">
+            <h1>Contacts:</h1>
+                {% if contacts is not empty %}
+                    <h3>Here are your contacts:</h3>
+                        <ul>
                             {% for contact in contacts %}
                                 <h3> {{ contact.getFirstName }} </h3>
                                 <li>First Name: {{ contact.getFirstName }} </li>
@@ -19,9 +19,9 @@
                                 <li>Address: {{ contact.getAddress }} </li>
                                 <p><img src="{{ contact.getImage }}"></p></br>
                             {% endfor %}
-                      </ul>
-              {% endif %}
-      </div>
+                        </ul>
+                {% endif %}
+        </div>
 
         <h2>Enter contact details here:</h2>
         <form action='/contacts' method='post'>
