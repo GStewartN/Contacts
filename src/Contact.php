@@ -5,13 +5,15 @@
         private $last_name;
         private $phone_number;
         private $address;
+        private $image;
 
-        function __construct($first_name, $last_name, $phone_number, $address)
+        function __construct($first_name, $last_name, $phone_number, $address, $image)
         {
             $this->first_name = $first_name;
             $this->last_name = $last_name;
             $this->phone_number = $phone_number;
             $this->address = $address;
+            $this->image = $image;
         }
 
         function setFirstName($new_first_name)
@@ -52,6 +54,16 @@
         function getAddress()
         {
             return $this->address;
+        }
+
+        function setImage($new_image)
+        {
+            $this->image = (string) $new_image;
+        }
+
+        function getImage()
+        {
+            return $this->image;
         }
 
         function save()

@@ -16,7 +16,8 @@
                                 <li>First Name: {{ contact.getFirstName }} </li>
                                 <li>Last Name: {{ contact.getLastName }} </li>
                                 <li>Phone: {{ contact.getPhoneNumber }} </li>
-                                <li>Address: {{ contact.getAddress }} </li></br>
+                                <li>Address: {{ contact.getAddress }} </li>
+                                <p><img src="{{ contact.getImage }}"></p></br>
                             {% endfor %}
                       </ul>
               {% endif %}
@@ -35,8 +36,11 @@
             <input name='phone_number' type='number'></br>
 
             <label for='address'>Address:</label>
-            <input name='address' type='text'>
-            </br>
+            <input name='address' type='text'></br>
+
+            <label for='image'>Image URL</label>
+            <input name='image' type='text'></br>
+
             <button type="submit">Add Contact</button>
         </form>
         <div class='well'>
