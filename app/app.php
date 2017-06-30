@@ -14,4 +14,16 @@
     $app->register(new Silex\Provider\TwigServiceProvider(), array(
         "twig.path" => __DIR__."/../views"
     ));
+
+    $app->get("/", function() use ($app) {
+          return $app["twig"]->render("contacts.html.twig", array("contacts" => Contact::getAll()));
+    });
+
+    $app->post("/contacts", function() use ($app) {
+        $contact = new Contact($_POST['first_name'], $_POST['last_name'], $_POST['phone_number'], $_POST['address']);
+        $contact->save();
+        return $app['twig']->render('create_contacts.html.twig', array('new_contact' => $contact));
+    })
+
+    return $app;
 ?>

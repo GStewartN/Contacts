@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Contacts</title>
+</head>
+<body>
+      <h1>Contacts:</h1>
+          {% if contacts is not empty %}
+              <h3>Here are your contacts.</h3>
+                  <ul>
+                        {% for contact in contacts %}
+                            <li>First Name: {{ place.getFirstName }} </li>
+                            <li>Last Name: {{ place.getLastName }} </li>
+                            <li>Phone: {{ place.getPhoneNumber }} </li>
+                            <li>Address: {{ place.getAddress }} </li>
+                        {% endfor %}
+                  </ul>
+          {% endif %}
+
+      <form action='/contacts' method='post'>
+          <label for='first_name'>Enter First Name</label>
+          <input name='first_name' type='text'>
+
+          <label for='last_name'>Enter Last Name</label>
+          <input name='last_name' type='text'>
+
+          <label for='phone_number'>Enter First Name</label>
+          <input name='phone_number' type='number'>
+
+          <label for='address'>Enter First Name</label>
+          <input name='address' type='text'>
+
+          <button type="submit">Add Contact</button>
+      </form>
+</body>
+</html>
