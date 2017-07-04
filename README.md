@@ -59,7 +59,7 @@ _The app will use Silex and Twig._
 
 MIT License
 
-Copyright &copy; 2017 Calla Rudolph & Nathan Stewart
+Copyright &copy; 2017 Nathan Stewart
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
