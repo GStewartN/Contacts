@@ -1,53 +1,54 @@
+<!DOCTYPE html>
 <html>
-<head>
+  <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <title>Contacts</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="well">
-            <h1>Contacts:</h1>
-                {% if contacts is not empty %}
-                    <h3>Here are your contacts:</h3>
-                        <ul>
-                            {% for contact in contacts %}
-                                <h3> {{ contact.getFirstName }} </h3>
-                                <li>First Name: {{ contact.getFirstName }} </li>
-                                <li>Last Name: {{ contact.getLastName }} </li>
-                                <li>Phone: {{ contact.getPhoneNumber }} </li>
-                                <li>Address: {{ contact.getAddress }} </li>
-                                <p><img src="{{ contact.getImage }}"></p></br>
-                            {% endfor %}
-                        </ul>
-                {% endif %}
-        </div>
+      <div class="well">
+        <h1>Contacts:</h1>
+          {% if contacts is not empty %}
+            <h3>Here are your contacts:</h3>
+            <ul>
+              {% for contact in contacts %}
+                <h3> {{ contact.getFirstName }} </h3>
+                <li>First Name: {{ contact.getFirstName }} </li>
+                <li>Last Name: {{ contact.getLastName }} </li>
+                <li>Phone: {{ contact.getPhoneNumber }} </li>
+                <li>Address: {{ contact.getAddress }} </li>
+                <p><img src="{{ contact.getImage }}"></p></br>
+              {% endfor %}
+            </ul>
+          {% endif %}
+      </div>
 
-        <h2>Enter contact details here:</h2>
-        <form action='/contacts' method='post'>
+      <h2>Enter contact details here:</h2>
+      <form action='/contacts' method='post'>
 
-            <label for='first_name'>First Name:</label>
-            <input name='first_name' type='text'></br>
+        <label for='first_name'>First Name:</label>
+        <input name='first_name' type='text' required></br>
 
-            <label for='last_name'>Last Name:</label>
-            <input name='last_name' type='text'></br>
+        <label for='last_name'>Last Name:</label>
+        <input name='last_name' type='text' required></br>
 
-            <label for='phone_number'>Phone #:</label>
-            <input name='phone_number' type='number'></br>
+        <label for='phone_number'>Phone #:</label>
+        <input name='phone_number' type='number' required></br>
 
-            <label for='address'>Address:</label>
-            <input name='address' type='text'></br>
+        <label for='address'>Address:</label>
+        <input name='address' type='text' required></br>
 
-            <label for='image'>Image URL</label>
-            <input name='image' type='text'></br>
+        <label for='image'>Image URL</label>
+        <input name='image' type='text'></br>
 
-            <button type="submit">Add Contact</button>
+        <button type="submit">Add Contact</button>
+      </form>
+      <div class='well'>
+        <form action='/delete_contacts' method='post'>
+          <button type='submit'>Delete All Contacts</button>
         </form>
-        <div class='well'>
-            <form action='/delete_contacts' method='post'>
-                <button type='submit'>Delete All Contacts</button>
-            </form>
       </div>
     </div>
-</body>
+  </body>
 </html>
